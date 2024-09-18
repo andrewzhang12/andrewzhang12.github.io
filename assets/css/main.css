@@ -1817,7 +1817,7 @@ input, select, textarea {
 			}
 
 			#nav a span {
-				display: block;
+				display: inline;
 				position: absolute;
 				background: #222222;
 				color: #ffffff;
