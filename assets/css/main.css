@@ -1296,6 +1296,9 @@ input, select, textarea {
 			line-height: 5.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
+			display:flex;
+			justify-content: center; /* Centers the image horizontally */
+    		align-items: center;  
 		}
 
 			#header .logo .icon:before {
