@@ -1307,6 +1307,22 @@ input, select, textarea {
                         border: 0;
                 }
 
+                #header .mobile-ribbon {
+                        display: none;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 1rem;
+                        width: 100%;
+                }
+
+                #header .mobile-name {
+                        font-weight: 600;
+                        letter-spacing: 0.2rem;
+                        text-transform: uppercase;
+                        font-size: 0.85rem;
+                        color: var(--text);
+                }
+
                 #header .nav-toggle {
                         display: none;
                         -moz-appearance: none;
@@ -1542,11 +1558,19 @@ input, select, textarea {
 
                         #header {
                                 align-items: stretch;
+                                padding: 0.9rem 1rem;
+                        }
+
+                        #header .content {
+                                display: none;
+                        }
+
+                        #header .mobile-ribbon {
+                                display: flex;
                         }
 
                         #header .nav-toggle {
                                 display: inline-flex;
-                                align-self: flex-start;
                         }
 
                         #header nav {
