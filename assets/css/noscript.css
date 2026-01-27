@@ -23,11 +23,21 @@
 			opacity: 1;
 		}
 
-		body.is-preload #header .content .inner {
-			max-height: none;
-			padding: 3rem 2rem;
-			opacity: 1;
+	body.is-preload #header .content .inner {
+		max-height: none;
+		padding: 3rem 2rem;
+		opacity: 1;
+	}
+
+	@media screen and (max-width: 736px), screen and (max-aspect-ratio: 3/4) {
+		#header nav {
+			display: block;
 		}
+
+		#header .nav-toggle {
+			display: none;
+		}
+	}
 
 /* Main */
 

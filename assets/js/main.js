@@ -54,7 +54,8 @@
         // Nav.
                 var $nav = $header.children('nav'),
                         $nav_li = $nav.find('li'),
-                        $nav_links = $nav.find('a[href^="#"]');
+                        $nav_links = $nav.find('a[href^="#"]'),
+                        $nav_toggle = $header.find('.nav-toggle');
 
                 // Add "middle" alignment classes if we're dealing with an even number of items.
                         if ($nav_li.length % 2 == 0) {
@@ -79,6 +80,14 @@
                         $nav_links.filter('[href="#' + id + '"]').addClass('active');
                 };
 
+                var closeNav = function() {
+                        if (!$header.hasClass('nav-open'))
+                                return;
+
+                        $header.removeClass('nav-open');
+                        $nav_toggle.attr('aria-expanded', 'false');
+                };
+
                 $nav_links.on('click', function(event) {
                         var href = $(this).attr('href');
                         if (!href || href.charAt(0) !== '#' || href.length === 1)
@@ -92,6 +101,12 @@
                         var offset = $target.offset().top - getHeaderOffset() - 16;
                         $('html, body').animate({ scrollTop: offset }, 500);
                         activateLink($target.attr('id'));
+                        closeNav();
+                });
+
+                $nav_toggle.on('click', function() {
+                        var isOpen = $header.toggleClass('nav-open').hasClass('nav-open');
+                        $nav_toggle.attr('aria-expanded', isOpen ? 'true' : 'false');
                 });
 
                 var updateActiveLink = function() {
